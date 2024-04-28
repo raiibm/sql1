@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2024 at 12:06 PM
+-- Generation Time: Apr 28, 2024 at 10:04 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -43,6 +43,31 @@ INSERT INTO `cou` (`id`, `cname`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `fail`
+--
+
+CREATE TABLE `fail` (
+  `id` int(11) NOT NULL,
+  `sname` varchar(225) DEFAULT NULL,
+  `birth` date DEFAULT NULL,
+  `gender` varchar(1) DEFAULT NULL,
+  `enr` date DEFAULT NULL,
+  `email` varchar(225) DEFAULT NULL,
+  `lev` int(11) DEFAULT NULL,
+  `cou` varchar(225) DEFAULT NULL,
+  `GPA` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `fail`
+--
+
+INSERT INTO `fail` (`id`, `sname`, `birth`, `gender`, `enr`, `email`, `lev`, `cou`, `GPA`) VALUES
+(3, 'Reema', '2004-06-07', 'F', '2021-03-30', 'Ree@hotmail', 6, 'IS', 59);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `ins`
 --
 
@@ -66,10 +91,10 @@ INSERT INTO `ins` (`id`, `iname`, `birth`, `gender`, `email`, `onum`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `stud`
+-- Table structure for table `smart`
 --
 
-CREATE TABLE `stud` (
+CREATE TABLE `smart` (
   `id` int(11) NOT NULL,
   `sname` varchar(225) DEFAULT NULL,
   `birth` date DEFAULT NULL,
@@ -82,14 +107,40 @@ CREATE TABLE `stud` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `smart`
+--
+
+INSERT INTO `smart` (`id`, `sname`, `birth`, `gender`, `enr`, `email`, `lev`, `cou`, `GPA`) VALUES
+(1, 'joud', '2010-02-01', 'F', '2023-02-04', 'j@hotmail', 3, 'IT', 93),
+(2, 'raghad', '2001-04-26', 'F', '2019-09-01', 'R@hotmail', 6, 'IT', 99);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stud`
+--
+
+CREATE TABLE `stud` (
+  `id` int(11) NOT NULL,
+  `sname` varchar(225) DEFAULT NULL,
+  `birth` date DEFAULT NULL,
+  `gender` varchar(225) DEFAULT NULL,
+  `enr` date DEFAULT NULL,
+  `email` varchar(225) DEFAULT NULL,
+  `lev` int(11) DEFAULT NULL,
+  `cou` varchar(225) DEFAULT NULL,
+  `GPA` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
 -- Dumping data for table `stud`
 --
 
 INSERT INTO `stud` (`id`, `sname`, `birth`, `gender`, `enr`, `email`, `lev`, `cou`, `GPA`) VALUES
-(1, 'joud', '2010-02-01', 'F', '2023-02-04', 'j@hotmail', 3, 'IT', 3.2),
-(2, 'raghad', '2001-04-26', 'F', '2019-09-01', 'R@hotmail', 6, 'IT', 4.1),
-(3, 'Reema', '2004-06-07', 'F', '2021-03-30', 'Ree@hotmail', 6, 'IS', 4.8),
-(4, 'abdullah', '2014-06-07', 'M', '2024-03-04', 'abduu@hotmail', 3, 'Math', 3.5);
+(1, 'joud', '2010-02-01', 'Female', '2023-02-04', 'j@hotmail', 3, 'IT', 93),
+(2, 'raghad', '2001-04-26', 'Female', '2019-09-01', 'R@hotmail', 6, 'IT', 99),
+(3, 'Reema', '2004-06-07', 'Female', '2021-03-30', 'Ree@hotmail', 6, 'IS', 65),
+(4, 'abdullah', '2014-06-07', 'Male', '2024-03-04', 'abduu@hotmail', 2, 'Math', 70);
 
 --
 -- Indexes for dumped tables
